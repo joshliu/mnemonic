@@ -7,6 +7,9 @@ target 'Mnemonic' do
 
   # Pods for Mnemonic
   pod 'Alamofire'
+  pod 'NVActivityIndicatorView'
+  pod 'SwiftyJSON'
+
 
   target 'MnemonicTests' do
     inherit! :search_paths

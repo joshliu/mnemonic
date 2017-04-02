@@ -24,6 +24,12 @@
 		03F14C7A1E904E4B007AD556 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F14C791E904E4B007AD556 /* ProfileViewController.swift */; };
 		5613ED3605B6A83CFA84ADA5 /* Pods_MnemonicTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26BF2D40918931499BF52817 /* Pods_MnemonicTests.framework */; };
 		A74FABD79B7106C79A371CBE /* Pods_MnemonicUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DD64E6ECD5674E326389030 /* Pods_MnemonicUITests.framework */; };
+		BBDDEEA31E9053B80067A1EA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDDEEA21E9053B80067A1EA /* MainViewController.swift */; };
+		BBDDEEA51E9056890067A1EA /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDDEEA41E9056890067A1EA /* ProfileTableViewCell.swift */; };
+		BBDDEEA71E9073D50067A1EA /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDDEEA61E9073D50067A1EA /* TagViewController.swift */; };
+		BBDDEEA91E907AA70067A1EA /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDDEEA81E907AA70067A1EA /* SCLAlertView.swift */; };
+		BBDDEEAB1E908D870067A1EA /* ConfirmPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDDEEAA1E908D870067A1EA /* ConfirmPictureViewController.swift */; };
+		BBDDEEAD1E908D900067A1EA /* ConfirmTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDDEEAC1E908D900067A1EA /* ConfirmTextViewController.swift */; };
 		DABD7D33B147B3CA4AC2D06A /* Pods_Mnemonic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA5DA84ED27386E370D77D49 /* Pods_Mnemonic.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +77,12 @@
 		26BF2D40918931499BF52817 /* Pods_MnemonicTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MnemonicTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DD64E6ECD5674E326389030 /* Pods_MnemonicUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MnemonicUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		505353675D077EBFC0496CF0 /* Pods-MnemonicUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MnemonicUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MnemonicUITests/Pods-MnemonicUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BBDDEEA21E9053B80067A1EA /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		BBDDEEA41E9056890067A1EA /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		BBDDEEA61E9073D50067A1EA /* TagViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; };
+		BBDDEEA81E907AA70067A1EA /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
+		BBDDEEAA1E908D870067A1EA /* ConfirmPictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmPictureViewController.swift; sourceTree = "<group>"; };
+		BBDDEEAC1E908D900067A1EA /* ConfirmTextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmTextViewController.swift; sourceTree = "<group>"; };
 		DA5DA84ED27386E370D77D49 /* Pods_Mnemonic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mnemonic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E06AB414548FDCE31EB05C98 /* Pods-Mnemonic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mnemonic.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mnemonic/Pods-Mnemonic.release.xcconfig"; sourceTree = "<group>"; };
 		EEB2254B6B9AADE44915EB21 /* Pods-Mnemonic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mnemonic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mnemonic/Pods-Mnemonic.debug.xcconfig"; sourceTree = "<group>"; };
@@ -132,7 +144,8 @@
 			children = (
 				037E8B421E90413800CEA8EE /* AppDelegate.swift */,
 				037E8B461E90413800CEA8EE /* Main.storyboard */,
-				03F14C731E904C45007AD556 /* NavigationController.swift */,
+				BBDDEEAA1E908D870067A1EA /* ConfirmPictureViewController.swift */,
+				BBDDEEAC1E908D900067A1EA /* ConfirmTextViewController.swift */,
 				03F14C691E9046A3007AD556 /* View Controllers */,
 				03F14C681E904695007AD556 /* Custom Views */,
 				03F14C6A1E9046C8007AD556 /* Supporting Files */,
@@ -170,6 +183,11 @@
 		03F14C691E9046A3007AD556 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BBDDEEA41E9056890067A1EA /* ProfileTableViewCell.swift */,
+				BBDDEEA21E9053B80067A1EA /* MainViewController.swift */,
+				03F14C731E904C45007AD556 /* NavigationController.swift */,
+				BBDDEEA61E9073D50067A1EA /* TagViewController.swift */,
+				BBDDEEA81E907AA70067A1EA /* SCLAlertView.swift */,
 				037E8B441E90413800CEA8EE /* ViewController.swift */,
 				03F14C641E904678007AD556 /* ConversationTableViewController.swift */,
 				03F14C621E904660007AD556 /* LoadingViewController.swift */,
@@ -290,7 +308,7 @@
 				TargetAttributes = {
 					037E8B3E1E90413700CEA8EE = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = K68L32QYS3;
+						DevelopmentTeam = R4DQ2L3FBV;
 						ProvisioningStyle = Automatic;
 					};
 					037E8B521E90413800CEA8EE = {
@@ -500,13 +518,19 @@
 			files = (
 				037E8B451E90413800CEA8EE /* ViewController.swift in Sources */,
 				03F14C741E904C45007AD556 /* NavigationController.swift in Sources */,
+				BBDDEEAB1E908D870067A1EA /* ConfirmPictureViewController.swift in Sources */,
 				037E8B431E90413800CEA8EE /* AppDelegate.swift in Sources */,
+				BBDDEEAD1E908D900067A1EA /* ConfirmTextViewController.swift in Sources */,
+				BBDDEEA51E9056890067A1EA /* ProfileTableViewCell.swift in Sources */,
 				03F14C651E904678007AD556 /* ConversationTableViewController.swift in Sources */,
 				03F14C631E904660007AD556 /* LoadingViewController.swift in Sources */,
 				03F14C761E904DEB007AD556 /* ListeningViewController.swift in Sources */,
 				03F14C7A1E904E4B007AD556 /* ProfileViewController.swift in Sources */,
 				03F14C781E904E3B007AD556 /* ReviewViewController.swift in Sources */,
+				BBDDEEA71E9073D50067A1EA /* TagViewController.swift in Sources */,
 				03F14C6D1E904729007AD556 /* ConversationTableViewCell.swift in Sources */,
+				BBDDEEA31E9053B80067A1EA /* MainViewController.swift in Sources */,
+				BBDDEEA91E907AA70067A1EA /* SCLAlertView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,7 +681,7 @@
 			baseConfigurationReference = EEB2254B6B9AADE44915EB21 /* Pods-Mnemonic.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = K68L32QYS3;
+				DEVELOPMENT_TEAM = R4DQ2L3FBV;
 				INFOPLIST_FILE = Mnemonic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.joshualiu.Mnemonic;
@@ -671,7 +695,7 @@
 			baseConfigurationReference = E06AB414548FDCE31EB05C98 /* Pods-Mnemonic.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = K68L32QYS3;
+				DEVELOPMENT_TEAM = R4DQ2L3FBV;
 				INFOPLIST_FILE = Mnemonic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.joshualiu.Mnemonic;
