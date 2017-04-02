@@ -30,6 +30,9 @@ class ListeningViewController: UIViewController , appleSpeechFeedbackProtocall {
         shouldEnd = false
 
     }
+    func stopRecording(){
+        appleSpeechAnalyzer.endSpeech()
+    }
     
     var shouldEnd = false
     

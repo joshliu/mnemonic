@@ -69,5 +69,8 @@ class ConfirmPictureViewController: UIViewController {
         print(jsonDict)
         self.navigationController?.pushViewController(confirmTagsVC, animated: true)
     }
+    @IBAction func cancelClicked(_ sender: Any) {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
     
 }

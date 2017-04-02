@@ -51,7 +51,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.tableView.delegate = self
         self.tableView.dataSource = self
         tableView.reloadData()
-        triggerEditVC()
     }
     
     
