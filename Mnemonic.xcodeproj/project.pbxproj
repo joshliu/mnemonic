@@ -24,6 +24,7 @@
 		03F14C7A1E904E4B007AD556 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F14C791E904E4B007AD556 /* ProfileViewController.swift */; };
 		5613ED3605B6A83CFA84ADA5 /* Pods_MnemonicTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26BF2D40918931499BF52817 /* Pods_MnemonicTests.framework */; };
 		A74FABD79B7106C79A371CBE /* Pods_MnemonicUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DD64E6ECD5674E326389030 /* Pods_MnemonicUITests.framework */; };
+		BB666BC61E90E54100ED41AE /* AppleSpeechController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB666BC51E90E54100ED41AE /* AppleSpeechController.swift */; };
 		BBDDEEA31E9053B80067A1EA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDDEEA21E9053B80067A1EA /* MainViewController.swift */; };
 		BBDDEEA51E9056890067A1EA /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDDEEA41E9056890067A1EA /* ProfileTableViewCell.swift */; };
 		BBDDEEA71E9073D50067A1EA /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDDEEA61E9073D50067A1EA /* TagViewController.swift */; };
@@ -77,6 +78,7 @@
 		26BF2D40918931499BF52817 /* Pods_MnemonicTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MnemonicTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DD64E6ECD5674E326389030 /* Pods_MnemonicUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MnemonicUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		505353675D077EBFC0496CF0 /* Pods-MnemonicUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MnemonicUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MnemonicUITests/Pods-MnemonicUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BB666BC51E90E54100ED41AE /* AppleSpeechController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleSpeechController.swift; sourceTree = "<group>"; };
 		BBDDEEA21E9053B80067A1EA /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BBDDEEA41E9056890067A1EA /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		BBDDEEA61E9073D50067A1EA /* TagViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				037E8B461E90413800CEA8EE /* Main.storyboard */,
 				BBDDEEAA1E908D870067A1EA /* ConfirmPictureViewController.swift */,
 				BBDDEEAC1E908D900067A1EA /* ConfirmTextViewController.swift */,
+				BB666BC51E90E54100ED41AE /* AppleSpeechController.swift */,
 				03F14C691E9046A3007AD556 /* View Controllers */,
 				03F14C681E904695007AD556 /* Custom Views */,
 				03F14C6A1E9046C8007AD556 /* Supporting Files */,
@@ -520,6 +523,7 @@
 				03F14C741E904C45007AD556 /* NavigationController.swift in Sources */,
 				BBDDEEAB1E908D870067A1EA /* ConfirmPictureViewController.swift in Sources */,
 				037E8B431E90413800CEA8EE /* AppDelegate.swift in Sources */,
+				BB666BC61E90E54100ED41AE /* AppleSpeechController.swift in Sources */,
 				BBDDEEAD1E908D900067A1EA /* ConfirmTextViewController.swift in Sources */,
 				BBDDEEA51E9056890067A1EA /* ProfileTableViewCell.swift in Sources */,
 				03F14C651E904678007AD556 /* ConversationTableViewController.swift in Sources */,

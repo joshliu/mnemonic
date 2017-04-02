@@ -19,7 +19,7 @@ class ConfirmTextViewController: UIViewController, TagViewControllerDelegate, UI
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var editTextField: UITextField!
     var jsonDict = Dictionary<String, Any>()
-
+    
     @IBOutlet weak var addButton: UIButton!{
         didSet {
             addButton.isEnabled = false
@@ -122,7 +122,7 @@ class ConfirmTextViewController: UIViewController, TagViewControllerDelegate, UI
             alertResponder.close()
         }
     }
-
+    
     @IBAction func submitButtonClicked(_ sender: Any) {
         jsonDict["date"] = dateTextField.text
         jsonDict["location"] = locationTextField.text
@@ -132,22 +132,31 @@ class ConfirmTextViewController: UIViewController, TagViewControllerDelegate, UI
     }
     
     func postToServer(){
-        var params  = Dictionary<String, Any>()
-        params["name"] = jsonDict["name"]
-        params["image_name"] = jsonDict["image_name"]
-        params["json_data"] = jsonDict
-        params = ["name": jsonDict["name"], "image_name":jsonDict["image_name"], "json_data": jsonDict]
-//        
-//        do {
-//            let data = try JSONSerialization.data(withJSONObject: params, options: JSONSerialization.WritingOptions.prettyPrinted)
-//            let string = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
-//            print(string)
-//        }catch{
-//            print("Failed conversion to json")
-//        }
-        let parameterString = "name=\(jsonDict["name"]!)&image_name=\(jsonDict["image_name"]!)&json_data=\(jsonDict)"
-        print(parameterString)
-        var request = URLRequest(url: URL(string: "http://23.239.11.5:5000/microsoft?" + parameterString)!)
+        let urlComponents = NSURLComponents()
+        urlComponents.scheme = "http"
+        urlComponents.host = "23.239.11.5"
+        urlComponents.port = 5000
+        urlComponents.path = "/microsoft"
+        
+        // add params
+        let nameQuery = URLQueryItem(name: "name", value: jsonDict["name"] as! String)
+        let imageQuery = URLQueryItem(name: "image_name", value: jsonDict["image_name"] as! String)
+        urlComponents.queryItems = [nameQuery, imageQuery]
+        do {
+            let data = try JSONSerialization.data(withJSONObject: jsonDict, options: JSONSerialization.WritingOptions.prettyPrinted)
+            let string = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
+            print(string)
+            let jsonDataQuery = URLQueryItem(name: "json_data", value: string as! String)
+            urlComponents.queryItems = [nameQuery, imageQuery, jsonDataQuery]
+        }catch{
+            print("Failed conversion to json")
+        }
+        
+        
+        let url  = urlComponents.url
+        print(url)
+        
+        var request = URLRequest(url: url!)
         request.httpMethod = "POST"
         let postString = ""
         request.httpBody = postString.data(using: .utf8)
@@ -166,46 +175,6 @@ class ConfirmTextViewController: UIViewController, TagViewControllerDelegate, UI
             print("responseString = \(responseString)")
         }
         task.resume()
-
-//        let request = NSMutableURLRequest(url: URL(string: "http://23.239.11.5:5000/microsoft")!)
-//        request.httpMethod = "POST"
-//        do {
-//            // Set the POST body for the request
-//            let jsonBody = try JSONSerialization.data(withJSONObject: params, options: .prettyPrinted)
-//            request.httpBody = jsonBody
-//            let session = URLSession.shared
-//            
-//            let task = session.dataTask(with: request as URLRequest, completionHandler: {data, response, error -> Void in
-//                if let jsonData = data {
-//                    let json:JSON = JSON(data: jsonData)
-//                    //onCompletion(json, nil)
-//                    print("The Response: ")
-//                    print(json)
-//                } else {
-//                    //onCompletion(nil, error)
-//                    print("The Response: ")
-//                    print("Hello")
-//                }
-//            })
-//            task.resume()
-//        } catch {
-//            // Create your personal error
-//            //onCompletion(nil, nil)
-//        }
-        
-        Alamofire.request("http://23.239.11.5:5000/microsoft", method: .post, parameters: params, encoding: URLEncoding.default).responseJSON { (response) in
-            print(response.result)
-        }
-        
-//        Alamofire.request("http://23.239.11.5:5000/microsoft", method: HTTPMethod.post, parameters: params, encoding: JSONEncoding.default).responseJSON { (response) in
-//            print(response)
-//        }
-
-//        Alamofire.request("http://23.239.11.5:5000/microsoft", method: HTTPMethod.post, parameters: params).responseJSON { (response) in
-//            print(response)
-//        }
-//        Alamofire.request("http://23.239.11.5:5000/microsoft", method: .post , parameters: params, encoding: .default, headers: <#T##HTTPHeaders?#>)
-        
         
     }
     
