@@ -91,22 +91,36 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func triggerEditVC(){
-        
+        var connections = 0
         var images = [UIImage]()
         Alamofire.request("http://23.239.11.5:5000/recent_image/image0.jpg").responseData { (data) in
+            connections += 1
             let image = UIImage(data: data.data!)
             images.append(image!)
-            Alamofire.request("http://23.239.11.5:5000/recent_image/image1.jpg").responseData { (data) in
-                let image = UIImage(data: data.data!)
-                images.append(image!)
-                Alamofire.request("http://23.239.11.5:5000/recent_image/image2.jpg").responseData { (data) in
-                    let image = UIImage(data: data.data!)
-                    images.append(image!)
-                    let editVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ConfirmPictureVC") as! ConfirmPictureViewController
-                    editVC.inputImages = images
-                    self.navigationController?.pushViewController(editVC, animated: true)
-                    
-                }
+            if connections == 3{
+                let editVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ConfirmPictureVC") as! ConfirmPictureViewController
+                editVC.inputImages = images
+                self.navigationController?.pushViewController(editVC, animated: true)
+            }
+        }
+        Alamofire.request("http://23.239.11.5:5000/recent_image/image1.jpg").responseData { (data) in
+            connections += 1
+            let image = UIImage(data: data.data!)
+            images.append(image!)
+            if connections == 3{
+                let editVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ConfirmPictureVC") as! ConfirmPictureViewController
+                editVC.inputImages = images
+                self.navigationController?.pushViewController(editVC, animated: true)
+            }
+        }
+        Alamofire.request("http://23.239.11.5:5000/recent_image/image2.jpg").responseData { (data) in
+            connections += 1
+            let image = UIImage(data: data.data!)
+            images.append(image!)
+            if connections == 3{
+            let editVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ConfirmPictureVC") as! ConfirmPictureViewController
+            editVC.inputImages = images
+            self.navigationController?.pushViewController(editVC, animated: true)
             }
             
         }

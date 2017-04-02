@@ -20,9 +20,9 @@ class ListeningViewController: UIViewController , appleSpeechFeedbackProtocall {
         
         self.view.addSubview(activityView)
         activityView.startAnimating()
-        appleSpeechAnalyzer.delegate = self
-        appleSpeechAnalyzer.setupRecognizer()
-        startRecording()
+//        appleSpeechAnalyzer.delegate = self
+//        appleSpeechAnalyzer.setupRecognizer()
+//        startRecording()
     }
     
     func startRecording(){
