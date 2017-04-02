@@ -14,14 +14,19 @@ class ConfirmPictureViewController: UIViewController {
     @IBOutlet weak var image1: UIImageView!
     @IBOutlet weak var image2: UIImageView!
     @IBOutlet var images: [UIImageView]!
+    var inputImages = [UIImage]()
     
     var jsonDict = Dictionary<String, Any>()
     
     @IBOutlet weak var nameTextField: UITextField!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        for i in 0..<inputImages.count{
+            images[i].image = inputImages[i]
+        }
         images.forEach{
             $0.layer.shadowOpacity = 0.5
             $0.layer.shadowRadius = 5

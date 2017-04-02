@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -18,7 +19,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     override func viewDidLoad() {
-        
         
         super.viewDidLoad()
         var data = Dictionary<String, Any>()
@@ -51,6 +51,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.tableView.delegate = self
         self.tableView.dataSource = self
         tableView.reloadData()
+        triggerEditVC()
     }
     
     
@@ -88,6 +89,29 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         
         return cell
+    }
+    
+    func triggerEditVC(){
+        
+        var images = [UIImage]()
+        Alamofire.request("http://23.239.11.5:5000/recent_image/image0.jpg").responseData { (data) in
+            let image = UIImage(data: data.data!)
+            images.append(image!)
+            Alamofire.request("http://23.239.11.5:5000/recent_image/image1.jpg").responseData { (data) in
+                let image = UIImage(data: data.data!)
+                images.append(image!)
+                Alamofire.request("http://23.239.11.5:5000/recent_image/image2.jpg").responseData { (data) in
+                    let image = UIImage(data: data.data!)
+                    images.append(image!)
+                    let editVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ConfirmPictureVC") as! ConfirmPictureViewController
+                    editVC.inputImages = images
+                    self.navigationController?.pushViewController(editVC, animated: true)
+                    
+                }
+            }
+            
+        }
+        
     }
     
     
